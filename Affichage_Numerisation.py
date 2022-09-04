@@ -91,15 +91,15 @@ class Digitisation:
         X = [self.Xlines[i] for i in range(0, len(self.Xlines), divider)]
         Y = [self.Ylines[i] for i in range(0, len(self.Ylines), divider)]
         Z = [self.Zlines[i] for i in range(0, len(self.Zlines), divider)]
-        """popList = []
+        popList = []
         for i in range(len(X)):
-            if Z[i] > 500:
+            if Z[i] > -221:
                 popList.append(i)
         
         for i in range(len(popList)):
             X.pop(popList[i] - i)
             Y.pop(popList[i] - i)
-            Z.pop(popList[i] - i)"""
+            Z.pop(popList[i] - i)
         plt.colorbar(ax.scatter(X, Y, Z, s=1, c=Z, cmap='magma'))
         ax.set_xlabel("X")
         ax.set_ylabel("Y")
@@ -225,8 +225,8 @@ class DigitisedLine:
         plt.close()
 
 if __name__ == "__main__":
-    digit1 = Digitisation("points_20.txt")
-    digit1.plotCenter()
+    digit1 = Digitisation("points_vrai2.txt")
+    #digit1.plotCenter()
     digit1.plotLines(1)
     """
     step = 90
